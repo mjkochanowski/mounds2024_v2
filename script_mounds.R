@@ -1,4 +1,3 @@
-
 library(ggplot2)
 library(vegan)
 library(car)
@@ -26,17 +25,13 @@ sp=read.csv('sp5.csv')
 spm = sp[,-(1:4)]
 sp_meta=sp[,1:4]
 rownames(spm) <- sp[,1]
-
 sppr=specnumber(spm)
-
 spp=cbind(sp_meta,sppr)
 
 leveneTest(sppr ~ season*substrate, data = sp)
 aov.taxa <- aov(sppr~substrate*season, data=sp)
 summary(aov.taxa)
 TukeyHSD(aov.taxa)
-
-
 
 #################################################################
 ### shannon diversity ###
@@ -59,31 +54,21 @@ kopce.meta=kopce[,(1:3)]
 
 set.seed(27041998)
 dist=vegdist(kopce.matrix, method = "bray")
-
-
 bd=betadisper(dist, kopce.meta$substrate)
 anova(bd)
-
 perma=adonis(dist~substrate*season+substrate*site, data=kopce.meta)
-perma 
 
 ### pariwaise post hoc ###
 library(pairwiseAdonis)
+
 pair.substrat<-pairwise.adonis(dist,factors=kopce.meta$substrate , p.adjust.m = 'bonferroni')
-pair.substrat
-
 pair.site<-pairwise.adonis(dist,factors=kopce.meta$site , p.adjust.m = 'bonferroni')
-pair.site
-
 pair.substrat.season<-pairwise.adonis(dist,factors=factor(paste(kopce.meta$substrate,kopce.meta$season)) , p.adjust.m = 'bonferroni')
-pair.substrat.season
-
 
 #################################################################
 ###NMDS###
 
 kop <- read.csv(file = "sp5.csv", header = TRUE, row.names = 1)
-
 kop.sp=kop[,-(1:3)]
 kop.meta=kop[,1:3]
 
@@ -112,10 +97,8 @@ sig.spp.scrs <- subset(spp.scrs, pval<0.05) #subset data to show species signifi
 library(indicspecies)
 
 pc = read.csv("sp5.csv", header= TRUE, sep="\t")
-
 abund = pc[,5:ncol(pc)]
 type = pc$substrate
-
 
 inv.IV = multipatt(abund, type, func = "IndVal", control = how(nperm=999))
 summary(inv.IV, alpha=0.05)
@@ -135,6 +118,9 @@ summary(inv.rg, alpha=0.05)
 ### Figures ###
 
 ### Figure 3 - CFUs ###
+cfu=read.csv("cfu5.csv", sep=',')
+cfu$substrate=factor(cfu$substrate, levels=c('forest litter', 'mound surface','mound interior'), labels = c('forest litter', 'mound surface','mound interior'))
+cfu$season=factor(cfu$season, levels=c('summer','autumn'), labels = c('August', 'October'))
 
 cfu_plot1=ggplot(cfu, aes(x=season,y=cfu, fill=season))+
   geom_boxplot()+
@@ -209,6 +195,14 @@ cfu_combined <- ggarrange(cfu_plot1,
 
 ### Figure 4 - number of taxa per sample ###
 
+sp=read.csv('sp5.csv')
+
+spm = sp[,-(1:4)]
+sp_meta=sp[,1:4]
+rownames(spm) <- sp[,1]
+sppr=specnumber(spm)
+spp=cbind(sp_meta,sppr)
+
 spp$substrate=factor(sp$substrate, levels=c('forest litter', 'mound surface','mound interior'), labels = c('forest litter', 'mound surface','mound interior'))
 spp$season=factor(sp$season, levels=c('summer','autumn'), labels=c('August', 'October'))
 
@@ -281,6 +275,29 @@ sp_combined <- ggarrange(sp_plot1,
                             widths=c(1.2,3)))
 
 ### Figure 5 NMDS ###
+
+kop <- read.csv(file = "sp5.csv", header = TRUE, row.names = 1)
+kop.sp=kop[,-(1:3)]
+kop.meta=kop[,1:3]
+
+set.seed(123)
+
+sp_distmat <- vegdist(kop.sp, method = "bray")
+
+kop.envfit <- envfit(kop.mds, kop.meta, permutations = 999) # this fits environmental vectors
+kop.spp.fit <- envfit(kop.mds, kop.sp, permutations = 9999) # this fits species vectors
+
+site.scrs <- as.data.frame(scores(kop.mds, display = "sites")) #save NMDS results into dataframe
+site.scrs <- cbind(site.scrs, season = kop.meta$season) #add grouping variable "season" to dataframe
+site.scrs <- cbind(site.scrs, substrate = kop.meta$substrate) #add grouping variable of cluster grouping to dataframe
+site.scrs <- cbind(site.scrs, Site = rownames(site.scrs)) #add site names as variable if you want to display on plot
+
+spp.scrs <- as.data.frame(scores(kop.spp.fit, display = "vectors")) #save species intrinsic values into dataframe
+spp.scrs <- cbind(spp.scrs, Species = rownames(spp.scrs)) #add species names to dataframe
+spp.scrs <- cbind(spp.scrs, pval = kop.spp.fit$vectors$pvals) #add pvalues to dataframe so you can select species which are significant
+#spp.scrs<- cbind(spp.scrs, abrev = abbreviate(spp.scrs$Species, minlength = 6)) #abbreviate species names
+sig.spp.scrs <- subset(spp.scrs, pval<0.05) #subset data to show species significant at 0.05
+
 
 substrate_colors <- c("forest litter" = "#A6A6A6", 
                       "mound surface" = "#F4B183", 
