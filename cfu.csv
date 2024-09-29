@@ -1,0 +1,25 @@
+sample,site,substrate,season,cfu
+1JG,1,forest litter,autumn,12
+1JP,1,mound surface,autumn,39
+1JS,1,mound interior,autumn,92
+1LG,1,forest litter,summer,102
+1LP,1,mound surface,summer,40
+1LS,1,mound interior,summer,34
+2JG,2,forest litter,autumn,40
+2JP,2,mound surface,autumn,28
+2JS,2,mound interior,autumn,45
+2LG,2,forest litter,summer,121
+2LP,2,mound surface,summer,37
+2LS,2,mound interior,summer,46
+3JG,3,forest litter,autumn,30
+3JP,3,mound surface,autumn,35
+3JS,3,mound interior,autumn,44
+3LG,3,forest litter,summer,66
+3LP,3,mound surface,summer,17
+3LS,3,mound interior,summer,26
+4JG,4,forest litter,autumn,12
+4JP,4,mound surface,autumn,64
+4JS,4,mound interior,autumn,67
+4LG,4,forest litter,summer,106
+4LP,4,mound surface,summer,137
+4LS,4,mound interior,summer,61

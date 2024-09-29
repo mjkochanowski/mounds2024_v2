@@ -1,0 +1,25 @@
+sample,site,substrate,season,A_coerulea,A_cylindrospora,A_glauca,E_lignicola,E_sugadairana,G_butleri,Gryganskiella_sp.1,L_amoeboidaea,L_gamsii,L_hyalina,M_alpina,M_gemmifera,M_plumbeus,M_pulchella,M_rishikesha,M_strictus,M_zonata,Mortierellacae_sp.1,P_verticillata-humilis,U_angularis,U_curvata,U_isabellina,U_vinacea
+1JG,1,forest litter,October,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,7,0
+1JP,1,mound surface,October,3,0,0,2,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,7,26,0
+1JS,1,mound interior,October,5,29,0,7,0,5,0,0,1,0,0,1,0,0,0,1,0,0,0,0,3,36,0
+1LG,1,forest litter,August,6,0,0,0,0,0,0,0,0,1,0,0,0,0,0,8,0,1,1,0,27,42,0
+1LP,1,mound surface,August,2,1,0,4,0,0,0,0,0,2,0,0,0,0,0,2,0,0,0,0,4,20,0
+1LS,1,mound interior,August,0,30,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0
+2JG,2,forest litter,October,8,6,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,1,0,7,16,0
+2JP,2,mound surface,October,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,19,2
+2JS,2,mound interior,October,2,11,1,5,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,1,0,19,2
+2LG,2,forest litter,August,12,1,1,0,0,0,0,0,1,0,0,0,2,0,2,2,0,0,0,6,20,66,2
+2LP,2,mound surface,August,1,3,0,3,0,0,0,0,0,0,0,0,1,0,0,2,1,0,0,3,2,17,1
+2LS,2,mound interior,August,1,13,0,3,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,6,0,13,4
+3JG,3,forest litter,October,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,24,0
+3JP,3,mound surface,October,0,0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,6,23,0
+3JS,3,mound interior,October,1,0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,6,28,0
+3LG,3,forest litter,August,5,0,0,1,0,0,0,0,0,0,0,0,0,1,0,1,0,0,4,1,7,28,0
+3LP,3,mound surface,August,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,1,0,3,1,1,6,1
+3LS,3,mound interior,August,2,0,0,2,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,2,14,0
+4JG,4,forest litter,October,2,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,6,1
+4JP,4,mound surface,October,0,1,1,2,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,5,1,43,5
+4JS,4,mound interior,October,4,6,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,4,6,37,2
+4LG,4,forest litter,August,6,3,0,0,1,0,1,0,1,0,0,0,0,0,0,0,4,0,8,0,13,56,1
+4LP,4,mound surface,August,10,4,1,5,0,0,0,0,0,4,0,0,2,0,0,2,0,0,0,4,8,73,2
+4LS,4,mound interior,August,4,9,1,2,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,9,4,26,0
